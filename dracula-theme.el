@@ -6,6 +6,8 @@
 
 ;; Author: film42
 ;; Version: 1.3.2
+;; Package-Version: 20180401.1010
+;; Package-X-Original-Version: 20180401.1009
 ;; Package-Requires: ((emacs "24"))
 ;; URL: https://github.com/dracula/emacs
 
@@ -24,6 +26,7 @@
       (fg4 "#b6b6b2")
       (bg1 "#282a36")
       (bg2 "#373844")
+      (for-helm-selection "#6b6d82")
       (bg3 "#464752")
       (bg4 "#565761")
       (bg5 "#44475a")
@@ -32,6 +35,9 @@
       (builtin "#ffb86c")
       (keyword "#ff79c6")
       (const   "#8be9fd")
+      (only-docs "#96c5d3")
+      (only-comment "#b8c2f2")
+      (only-linum "#9a9b9e")
       (comment "#6272a4")
       (func    "#50fa7b")
       (str     "#f1fa8c")
@@ -65,7 +71,7 @@
    `(info-string ((,class (:foreground ,str))))
    `(lazy-highlight ((,class (:foreground ,fg2 :background ,bg3))))
    `(link ((,class (:foreground ,const :underline t))))
-   `(linum ((,class (:slant italic :foreground ,bg4 :background ,bg1))))
+   `(linum ((,class (:slant italic :foreground ,only-linum :background ,bg1))))
    `(minibuffer-prompt ((,class (:bold t :foreground ,keyword))))
    `(region ((,class (:background ,str :foreground ,bg1))))
    `(show-paren-match-face ((,class (:background ,warning))))
@@ -74,16 +80,16 @@
    `(warning ((,class (:foreground ,warning))))
    `(whitespace-trailing ((,class :inherit trailing-whitespace)))
    ;; syntax
-   `(font-lock-builtin-face ((,class (:foreground ,builtin))))
-   `(font-lock-comment-face ((,class (:foreground ,comment))))
+   `(font-lock-builtin-face ((,class (:slant italic :foreground ,builtin))))
+   `(font-lock-comment-face ((,class (:slant italic :foreground ,only-comment))))
    `(font-lock-constant-face ((,class (:foreground ,const))))
-   `(font-lock-doc-face ((,class (:foreground ,comment))))
-   `(font-lock-function-name-face ((,class (:foreground ,func :bold t))))
+   `(font-lock-doc-face ((,class (:slant italic :foreground ,only-docs))))
+   `(font-lock-function-name-face ((,class (:slant italic :foreground ,func :bold t))))
    `(font-lock-keyword-face ((,class (:bold ,class :foreground ,keyword))))
    `(font-lock-negation-char-face ((,class (:foreground ,const))))
    `(font-lock-reference-face ((,class (:foreground ,const))))
    `(font-lock-string-face ((,class (:foreground ,str))))
-   `(font-lock-type-face ((,class (:foreground ,type ))))
+   `(font-lock-type-face ((,class (:slant italic :foreground ,type ))))
    `(font-lock-variable-name-face ((,class (:foreground ,var))))
    `(font-lock-warning-face ((,class (:foreground ,warning :background ,bg2))))
    ;; auto-complete
@@ -171,7 +177,7 @@
    `(helm-grep-running ((,class (:foreground ,func :background ,bg1))))
    `(helm-header ((,class (:foreground ,fg2 :background ,bg1 :underline nil :box nil))))
    `(helm-moccur-buffer ((,class (:foreground ,func :background ,bg1))))
-   `(helm-selection ((,class (:background ,bg2 :underline nil))))
+   `(helm-selection ((,class (:background ,for-helm-selection :underline nil))))
    `(helm-selection-line ((,class (:background ,bg2))))
    `(helm-separator ((,class (:foreground ,type :background ,bg1))))
    `(helm-source-go-package-godoc-description ((,class (:foreground ,str))))
