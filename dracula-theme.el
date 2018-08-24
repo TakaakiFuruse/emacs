@@ -419,7 +419,7 @@
    `(icicle-candidate-part                     ((,class (:foreground ,var))))
    `(icicle-annotation                         ((,class (:foreground ,fg4))))
   ))
-=======
+
 (let ((colors '((fg1          "#f8f8f2")      ; Assigment form: VARIABLE COLOR [TTY-COLOR]
                 (fg2          "#e2e2dc")
                 (fg3          "#ccccc7")
